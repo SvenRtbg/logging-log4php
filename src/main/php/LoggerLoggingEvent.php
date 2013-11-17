@@ -21,7 +21,6 @@
 /**
  * The internal representation of logging event.
  *
- * @version $Revision$
  * @package log4php
  */
 class LoggerLoggingEvent {
@@ -192,6 +191,14 @@ class LoggerLoggingEvent {
 			$this->locationInfo = new LoggerLocationInfo($locationInfo, $this->fqcn);
 		}
 		return $this->locationInfo;
+	}
+
+	/**
+	 * Sets the event's location info. Can be used to override the default info.
+	 * @param LoggerLocationInfo $locationInfo
+	 */
+	public function setLocationInformation(LoggerLocationInfo $locationInfo) {
+		$this->locationInfo = $locationInfo;
 	}
 
 	/**
